@@ -2,7 +2,7 @@
 
 ESP8266WebServer
 ======
-![](img/mainpage.jpg)
+![](./img/mainpage.jpg)
 >本仓库是`食物热量识别系统`的网页数据显示部分
 >
 >**ESP8266作为服务器**，向链接到该IP的终端发送HTML网页
@@ -39,11 +39,11 @@ HTML
 
 #### setup函数：
 * part1：WIFI模式设定
-![wifimode](Img\Wifi_mode.jpg)
+![wifimode](./Img/Wifi_mode.jpg)
 设置WiFi为STA模式，STA模式需要电脑与ESP8266连接同一个WiFi（或者手机热点）进行数据传输
-![STA](Img\STA.png)
+![STA](./Img/STA.png)
 宏定义 STASSID STAPSK 指定热点id以及密码
-![info](Img\ap_info.jpg)
+![info](./Img\ap_info.jpg)
 
 * part 2: 检查连接
   检查esp是否连接上WiFi，连接成功后，串口监视器会打印出**服务器的ip地址**，在浏览器打开该ip地址，可以看到服务器发送的HTML(一串字符串)，浏览器会对其进行解析，以网页的形式呈现
@@ -112,7 +112,7 @@ void loop(void) {
 
 * step1 把html代码全部复制粘贴到这个框里面,点击**普通压缩**
 
-  ![](img/sojason1.jpg)
+  ![](./img/sojason1.jpg)
 
 * step2 转义处理
 
