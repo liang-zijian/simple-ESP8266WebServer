@@ -49,7 +49,7 @@ HTML
 
 宏定义 STASSID STAPSK 指定热点id以及密码
 
-![info](./Img\ap_info.jpg)
+![info](./Img/ap_info.jpg)
 
 * part 2: 检查连接
   检查esp是否连接上WiFi，连接成功后，串口监视器会打印出**服务器的ip地址**，在浏览器打开该ip地址，可以看到服务器发送的HTML(一串字符串)，浏览器会对其进行解析，以网页的形式呈现
