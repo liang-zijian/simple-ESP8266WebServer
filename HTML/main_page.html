@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible"content="ie=edge">
+<title>Food Calorie Analysis Platform</title>
+</head>
+<body>
+<h1 align="center">Food Calorie Analysis Platform</h1>
+<script>
+	function local(pin,staut)
+	{
+		var xmlhttp=new XMLHttpRequest();
+		xmlhttp.open("GET","/pin?pin="+pin+"&light="+staut,true);
+		xmlhttp.send()
+	}	
+</script>
+
+<div>
+	<a href="#"onclick="local(1,'on')"><input type="button"value="reset"style="font-size: 24px; padding: 10px; margin: auto 10px ;"></a>
+	<a href="#"onclick="local(1,'off')"><input type="button"value="start"style="font-size: 24px; padding: 10px; margin: auto 10px; float: right;"></a>
+</div>
+
+<div id="main2"style="width:80%;height:450px;margin: 150px "align="center"></div>
+
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+<script type="text/javascript">
+	require.config({paths:{echarts:'http://echarts.baidu.com/build/dist'}});
+	require(['echarts','echarts/chart/bar','echarts/chart/line'],
+	function(ec)
+	{
+		var myChart2=ec.init(document.getElementById('main2'));
+		var option2={
+			title:{text:'Food Calorie',textStyle:{fontSize:14,fontStyle:'normal',fontWeight:'bold',},},
+			tooltip:{trigger:'axis'},
+			legend:{data:['Calorie','Vitamins','Dietary fiber']},
+			toolbox:{show:true,feature:{dataView:{show:true,readOnly:false},magicType:{show:true,type:['line','bar']},restore:{show:true},saveAsImage:{show:true}}},
+			calculable:true,
+			xAxis:[{type:'category',
+					data:['potato','tomato','Cucumber','corn','egg','reserved'],
+					name:'category',
+					position:'left'}],
+			yAxis:[{type:'value',
+					name:'value(s)',
+					position:'left'}],
+					series:[{name:'Calorie',type:'bar',data:[19.5,19.8,21.7,25.1,32.5,48.9],color:'#CC0066'},
+							{name:'Vitamins',type:'bar',data:[15.0,16.6,17.3,17.4,19.6,22.7],color:'#009999'},
+							{name:'Dietary fiber',type:'bar',data:[8.0,13.6,13.3,11.4,6.6,22.7],color:'#66cccc'}]};
+	myChart2.setOption(option2)
+	}
+);
+</script>
+</body>
