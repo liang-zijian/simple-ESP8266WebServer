@@ -2,7 +2,7 @@
 
 ESP8266WebServer
 ======
-![main_page](./img/mainpage.jpg)
+![main_page](./Img/mainpage.jpg)
 
 >本仓库是`食物热量识别系统`的网页数据显示部分
 >
@@ -118,7 +118,7 @@ void loop(void) {
 
 * step1 把html代码全部复制粘贴到这个框里面,点击**普通压缩**
 
-  ![sojason](./img/sojason1.jpg)
+  ![sojason](./Img/sojason1.jpg)
 
 * step2 转义处理
 
