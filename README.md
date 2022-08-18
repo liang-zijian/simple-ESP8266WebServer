@@ -2,7 +2,8 @@
 
 ESP8266WebServer
 ======
-![](./img/mainpage.jpg)
+![main_page](./img/mainpage.jpg)
+
 >本仓库是`食物热量识别系统`的网页数据显示部分
 >
 >**ESP8266作为服务器**，向链接到该IP的终端发送HTML网页
@@ -39,10 +40,15 @@ HTML
 
 #### setup函数：
 * part1：WIFI模式设定
+
 ![wifimode](./Img/Wifi_mode.jpg)
+
 设置WiFi为STA模式，STA模式需要电脑与ESP8266连接同一个WiFi（或者手机热点）进行数据传输
+
 ![STA](./Img/STA.png)
+
 宏定义 STASSID STAPSK 指定热点id以及密码
+
 ![info](./Img\ap_info.jpg)
 
 * part 2: 检查连接
@@ -112,7 +118,7 @@ void loop(void) {
 
 * step1 把html代码全部复制粘贴到这个框里面,点击**普通压缩**
 
-  ![](./img/sojason1.jpg)
+  ![sojason](./img/sojason1.jpg)
 
 * step2 转义处理
 
@@ -126,7 +132,7 @@ void loop(void) {
 
 * 终端--->服务器：
 
-<a href>字段中定义了两个按钮，**onclick**字段指定按下按钮会触发函数 **local(pin, status)**，向服务器发送pin和status两个变量
+href 字段中定义了两个按钮，**onclick**字段指定按下按钮会触发函数 **local(pin, status)**，向服务器发送pin和status两个变量
 
 ```HTML
 <script>
@@ -143,6 +149,7 @@ void loop(void) {
 	<a href="#"onclick="local(1,'on')"><input type="button"value="reset"style="font-size: 24px; padding: 10px; margin: auto 10px ;"></a>
 	<a href="#"onclick="local(1,'off')"><input type="button"value="start"style="font-size: 24px; padding: 10px; margin: auto 10px; float: right;"></a>
 ```
+
 pin函数负责解析终端发来的pin变量
 
 ```C
